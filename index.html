@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمود الجعيدي | صناعة إعلانات الفيديو بالذكاء الاصطناعي والحملات الممولة</title>
+  
+  <meta name="description" content="الموقع التعريفي لمحمود الجعيدي - متخصص في صناعة فيديوهات إعلانية مبتكرة بالذكاء الاصطناعي وإدارة الحملات الممولة. خريج الجامعة الإسلامية بغزة تكنولوجيا معلومات 2026.">
+  <link rel="icon" type="image/png" href="./assets/profile_closeup.png">
+
+  <!-- Google Fonts: Cairo (Arabic) & Plus Jakarta Sans (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#10b981',
+              dark: '#070b14',
+              card: '#101726',
+              border: '#1f293d',
+              accent: '#059669'
+            }
+          },
+          fontFamily: {
+            ar: ['Cairo', 'sans-serif'],
+            en: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="text-slate-200 font-ar antialiased min-h-screen selection:bg-emerald-500/20 selection:text-emerald-300 relative">
+
+  <!-- Ambient Cinema Studio Dust Particles -->
+  <canvas id="studioParticles" class="fixed inset-0 pointer-events-none z-0 opacity-50"></canvas>
+
+  <!-- Clean, Elegant Header -->
+  <header class="sticky top-0 z-40 bg-[#070b14]/85 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300" id="navbar">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Name -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <img src="./assets/profile_closeup.png" alt="Mahmoud Al-Juaidi" class="w-10 h-10 rounded-full object-cover border border-emerald-500/40 group-hover:scale-105 transition-transform duration-300">
+        <div>
+          <span class="font-bold text-base text-white block leading-tight group-hover:text-emerald-400 transition-colors" data-i18n="nav.name">محمود الجعيدي</span>
+          <span class="text-xs text-slate-400 block" data-i18n="nav.role">فيديوهات AI وإعلانات ممولة</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-8" id="navLinks">
+        <a href="#hero" class="nav-item text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors active" data-i18n="nav.home">الرئيسية</a>
+        <a href="#work" class="nav-item text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav.work">أعمالي</a>
+        <a href="#about" class="nav-item text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav.about">عن محمود</a>
+        <a href="#contact" class="nav-item text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav.contact">تواصل معي</a>
+      </nav>
+
+      <!-- Actions: Language & WhatsApp -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher -->
+        <button id="langToggleBtn" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-xs font-semibold text-slate-300 transition-colors flex items-center gap-1.5">
+          <span class="text-xs">🌐</span>
+          <span id="langText">English</span>
+        </button>
+
+        <!-- Direct WhatsApp CTA -->
+        <a href="https://wa.me/970598564698?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%B4%D8%A7%D9%87%D8%AF%D8%AA%20%D9%85%D9%88%D9%82%D8%B9%D9%83%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86%20%D9%85%D8%B9%D9%83" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs rounded-lg transition-all hover:shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-0.5"
+           title="+970 598 564 698">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+          </svg>
+          <span data-i18n="nav.talk">تواصل واتساب</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-400 hover:text-white" aria-label="Toggle Navigation">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobileDrawer" class="hidden md:hidden border-t border-slate-800 bg-[#070b14] px-6 py-4 flex flex-col gap-3">
+      <a href="#hero" class="mobile-link text-sm text-slate-300 hover:text-emerald-400 py-1" data-i18n="nav.home">الرئيسية</a>
+      <a href="#work" class="mobile-link text-sm text-slate-300 hover:text-emerald-400 py-1" data-i18n="nav.work">أعمالي</a>
+      <a href="#about" class="mobile-link text-sm text-slate-300 hover:text-emerald-400 py-1" data-i18n="nav.about">عن محمود</a>
+      <a href="#contact" class="mobile-link text-sm text-slate-300 hover:text-emerald-400 py-1" data-i18n="nav.contact">تواصل معي</a>
+      <a href="https://wa.me/970598564698" target="_blank" rel="noopener noreferrer" class="mt-2 py-2 px-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-lg text-xs font-semibold flex items-center justify-between">
+        <span>واتساب: <span dir="ltr" class="font-mono">+970 598 564 698</span></span>
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Clean Hero Section with Studio Atmosphere -->
+  <section class="py-16 md:py-24 relative overflow-hidden" id="hero">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        
+        <!-- Text Content (7 Cols) -->
+        <div class="md:col-span-7 flex flex-col items-start text-start reveal">
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-5">
+            <span data-i18n="hero.title1">صناعة إعلانات الفيديو بالذكاء الاصطناعي</span><br>
+            <span class="text-emerald-400" data-i18n="hero.title2">وإدارة الحملات الممولة</span>
+          </h1>
+
+          <p class="text-base text-slate-300 leading-relaxed mb-8 max-w-xl" data-i18n="hero.desc">
+            أهلاً بك، أنا <strong>محمود الجعيدي</strong>. أجمع بين دراستي البرمجية في تكنولوجيا المعلومات وخبرتي في أدوات الذكاء الاصطناعي التوليدي لإنتاج فيديوهات إعلانية احترافية وإدارة حملاتك الممولة لتحقيق مبيعات حقيقية بأعلى كفاءة.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <a href="#work" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm rounded-xl transition-all shadow-lg shadow-emerald-500/20 hover:-translate-y-0.5">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <span data-i18n="hero.viewWork">استعرض الفيديوهات (24 نموذج)</span>
+            </a>
+
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold text-sm rounded-xl transition-all border border-slate-700 hover:-translate-y-0.5">
+              <span data-i18n="hero.contactBtn">تواصل معي مباشرة</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Photo with Viewfinder Cinema Framing -->
+        <div class="md:col-span-5 flex justify-center reveal delay-200">
+          <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-slate-800/90 bg-[#101726]/85 backdrop-blur-md shadow-2xl p-2.5 transition-transform duration-500 hover:scale-[1.02]">
+            
+            <!-- Cinema Viewfinder Marks -->
+            <span class="viewfinder-crosshair vf-tl"></span>
+            <span class="viewfinder-crosshair vf-tr"></span>
+            <span class="viewfinder-crosshair vf-bl"></span>
+            <span class="viewfinder-crosshair vf-br"></span>
+
+            <img src="./assets/profile_closeup.png" alt="Mahmoud Al-Juaidi" class="w-full h-[400px] object-cover object-top rounded-xl">
+            <div class="pt-3 px-2 text-center">
+              <span class="text-sm font-bold text-white block">محمود الجعيدي</span>
+              <span class="text-xs text-emerald-400 block mt-0.5">تطوير برمجيات IT • خبير إعلانات AI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Gentle Scroll Down Indicator -->
+      <div class="flex justify-center mt-14 reveal delay-300">
+        <a href="#work" class="inline-flex flex-col items-center gap-1.5 text-xs text-slate-500 hover:text-emerald-400 transition-colors group">
+          <span data-i18n="hero.scrollDown">استكشف الأعمال</span>
+          <span class="w-5 h-8 rounded-full border border-slate-700 group-hover:border-emerald-500/50 flex items-start justify-center p-1 transition-colors">
+            <span class="w-1 h-2 bg-emerald-400 rounded-full animate-bounce"></span>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Work Showcase: The 5 Real Videos -->
+  <section class="py-16 md:py-24 bg-[#090e1a]/70 backdrop-blur-sm border-y border-slate-800/80" id="work">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3" data-i18n="work.title">
+          معرض الأعمال والفيديوهات (24 نموذج واقعي)
+        </h2>
+        <p class="text-sm text-slate-400 leading-relaxed" data-i18n="work.desc">
+          نماذج إعلانية متنوعة تم إنتاجها بالذكاء الاصطناعي بنسبة 9:16 المخصصة للسوشيال ميديا (تيك توك، ريلز، وسناب شات).
+        </p>
+
+        <!-- Clean Category Filter -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
+          <button class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 text-slate-950 transition-colors" data-filter="all" data-i18n="filter.all">الكل (24)</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="food" data-i18n="filter.food">مطاعم وأغذية</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="sweets" data-i18n="filter.sweets">حلويات</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="beauty" data-i18n="filter.beauty">تجميل وعناية</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="fitness" data-i18n="filter.fitness">لياقة وجيم</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="fashion" data-i18n="filter.fashion">أزياء وموضة</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="tech" data-i18n="filter.tech">إلكترونيات وجيمنج</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-colors" data-filter="services" data-i18n="filter.services">خدمات ومناسبات</button>
+        </div>
+      </div>
+
+      <!-- Videos Grid: 4 columns on desktop, 3 on md, 2 on sm, 1 on mobile -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="videosContainer">
+        <!-- 24 Video Cards Rendered Dynamically by script.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean About Section -->
+  <section class="py-16 md:py-24" id="about">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-[#101726]/85 backdrop-blur-md border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-xl reveal">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold mb-3">
+          <span>🎓</span>
+          <span data-i18n="about.degree">خريج الجامعة الإسلامية بغزة 2026 • تكنولوجيا معلومات (IT)</span>
+        </div>
+        <h2 class="text-2xl font-bold text-white mb-4" data-i18n="about.title">نبذة عن محمود الجعيدي</h2>
+        
+        <div class="space-y-4 text-sm text-slate-300 leading-relaxed mb-8">
+          <p data-i18n="about.p1">
+            أنا <strong>محمود الجعيدي</strong>، خريج <strong>الجامعة الإسلامية بغزة (دفعة 2026)</strong> بعد دراسة استمرت 4 سنوات في قسم <strong>تكنولوجيا المعلومات (IT) وتطوير البرمجيات</strong>.
+          </p>
+          <p data-i18n="about.p2">
+            خلال مسيرتي، وظّفت العقلية البرمجية والتحليلية في مجال <strong>صناعة فيديوهات الذكاء الاصطناعي التوليدي</strong> وإدارة <strong>الحملات الإعلانية الممولة (Media Buying)</strong> على منصات فيسبوك، إنستغرام، تيك توك، وسناب شات.
+          </p>
+          <p data-i18n="about.p3">
+            هدفي هو مساعدة المتاجر والأنشطة التجارية على الوصول لعملاء مهتمين ومضاعفة المبيعات بأقل تكلفة ممكنة، من خلال الجمع بين جاذبية الإعلان البصري ودقة الاستهداف الإعلاني.
+          </p>
+        </div>
+
+        <!-- 3 Core Services in Clean Boxes -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+          <div class="bg-[#070b14]/75 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-colors">
+            <span class="text-2xl mb-2 block">🎬</span>
+            <strong class="text-xs text-white block mb-1" data-i18n="s1.title">فيديوهات إعلانية بالـ AI</strong>
+            <span class="text-[11px] text-slate-400 block" data-i18n="s1.desc">مشاهد سينمائية، تعليق صوتي واقعي، ومؤثرات بصرية دون تكاليف تصوير باهظة.</span>
+          </div>
+
+          <div class="bg-[#070b14]/75 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-colors">
+            <span class="text-2xl mb-2 block">📈</span>
+            <strong class="text-xs text-white block mb-1" data-i18n="s2.title">إدارة الحملات الممولة</strong>
+            <span class="text-[11px] text-slate-400 block" data-i18n="s2.desc">إطلاق ومتابعة الحملات على Meta وتيك توك مع استهداف دقيق للعملاء المشترين.</span>
+          </div>
+
+          <div class="bg-[#070b14]/75 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-colors">
+            <span class="text-2xl mb-2 block">💻</span>
+            <strong class="text-xs text-white block mb-1" data-i18n="s3.title">الربط التقني وتتبع البيكسل</strong>
+            <span class="text-[11px] text-slate-400 block" data-i18n="s3.desc">إعداد Meta Pixel و CAPI وربط متجرك لضمان قياس كل عملية بيع بدقة.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Contact Section -->
+  <section class="py-16 md:py-24 bg-[#090e1a]/70 backdrop-blur-sm border-t border-slate-800/80" id="contact">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center mb-8 reveal">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2" data-i18n="contact.title">تواصل معي وابدأ مشروعك</h2>
+        <p class="text-sm text-slate-400" data-i18n="contact.desc">يمكنك مراسلتي مباشرة عبر الواتساب أو إرسال تفاصيل مشروعك من النموذج التالي:</p>
+      </div>
+
+      <div class="bg-[#101726]/85 backdrop-blur-md border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl reveal delay-100">
+        
+        <!-- Direct WhatsApp Banner -->
+        <a href="https://wa.me/970598564698?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86%20%D9%85%D8%B9%D9%83%20%D9%81%D9%8A%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D9%8A" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="w-full flex flex-col sm:flex-row items-center justify-center gap-2.5 py-3.5 px-4 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-sm rounded-xl mb-6 transition-all hover:shadow-lg hover:shadow-emerald-500/20 hover:-translate-y-0.5">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+            <span data-i18n="contact.waBtn">محادثة واتساب سريعة ومباشرة</span>
+          </div>
+          <span class="inline-block px-2.5 py-0.5 rounded-full bg-slate-950/20 text-slate-950 font-mono text-xs font-black dir-ltr tracking-wide" dir="ltr">+970 598 564 698</span>
+        </a>
+
+        <div class="relative flex items-center justify-center my-6">
+          <div class="border-t border-slate-800 w-full"></div>
+          <span class="bg-[#101726] px-3 text-xs text-slate-500 font-medium" data-i18n="contact.or">أو املأ النموذج</span>
+        </div>
+
+        <!-- Clean Form -->
+        <form id="contactForm" class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="f.name">الاسم الكريم أو اسم المتجر</label>
+            <input type="text" id="formName" required placeholder="أدخل اسمك" class="w-full bg-[#070b14] border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-emerald-500 focus:outline-none transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="f.contact">رقم الهاتف أو الواتساب</label>
+            <input type="text" id="formContact" required placeholder="+970..." class="w-full bg-[#070b14] border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-emerald-500 focus:outline-none transition-colors">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="f.service">نوع الخدمة</label>
+            <select id="formService" class="w-full bg-[#070b14] border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-emerald-500 focus:outline-none transition-colors">
+              <option value="فيديو إعلاني بالذكاء الاصطناعي" data-i18n="f.opt1">فيديو إعلاني بالذكاء الاصطناعي</option>
+              <option value="إدارة حملات إعلانية ممولة" data-i18n="f.opt2">إدارة حملات إعلانية ممولة</option>
+              <option value="باقة متكاملة (فيديو + إعلان ممول)" data-i18n="f.opt3">باقة متكاملة (فيديو + إعلان ممول)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="f.msg">رسالتك أو تفاصيل عن منتجك</label>
+            <textarea id="formMsg" rows="3" placeholder="اكتب نبذة عن مجالك..." class="w-full bg-[#070b14] border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-emerald-500 focus:outline-none transition-colors"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 font-bold text-xs rounded-lg transition-all border border-slate-700 hover:-translate-y-0.5">
+            <span data-i18n="f.send">إرسال التفاصيل عبر الواتساب</span>
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Footer -->
+  <footer class="py-6 bg-[#05080f] text-center text-xs text-slate-500 border-t border-slate-800/60">
+    <p data-i18n="footer.text">جميع الحقوق محفوظة © 2026</p>
+  </footer>
+
+  <!-- Lightbox Modal for Playing Videos -->
+  <div id="videoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300">
+    <div id="modalBox" class="relative bg-[#101726] border border-slate-800 rounded-2xl max-w-md w-full p-4 shadow-2xl transform scale-95 transition-transform duration-300">
+      <button id="modalCloseBtn" class="absolute top-3 end-3 z-10 w-8 h-8 rounded-full bg-slate-800 hover:bg-red-500 text-white flex items-center justify-center text-sm font-bold transition-colors">
+        ✕
+      </button>
+
+      <div class="w-full aspect-[9/16] rounded-xl overflow-hidden bg-black mb-3">
+        <video id="modalVideo" class="w-full h-full object-cover" playsinline controls></video>
+      </div>
+
+      <div class="text-start">
+        <span id="modalCat" class="text-[11px] font-semibold text-emerald-400 block mb-1">تصنيف</span>
+        <h3 id="modalTitle" class="text-sm font-bold text-white mb-2">عنوان الفيديو</h3>
+        <p id="modalDesc" class="text-xs text-slate-400 mb-4 leading-relaxed">وصف الفيديو</p>
+
+        <a id="modalWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs rounded-lg flex items-center justify-center gap-2 transition-colors">
+          <span data-i18n="modal.btn">طلب إعلان فيديو مماثل عبر واتساب</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Discreet Floating Back to Top Button -->
+  <button id="backToTopBtn" class="fixed bottom-6 start-6 z-40 w-10 h-10 rounded-full bg-slate-800/80 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 border border-slate-700 backdrop-blur-md flex items-center justify-center text-sm font-bold opacity-0 pointer-events-none transition-all duration-300 hover:-translate-y-1 shadow-lg" title="العودة للأعلى" aria-label="Back to Top">
+    ↑
+  </button>
+
+  <script src="./script.js"></script>
+</body>
+</html>

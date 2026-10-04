@@ -1,0 +1,139 @@
+/* ==========================================================================
+   MAHMOUD AL-JUAIDI - CLEAN & MINIMAL PORTFOLIO STYLES
+   Cinematic Studio Background, Gentle Scroll Reveals & Soft Transitions
+   ========================================================================== */
+
+/* Typography by Direction */
+html[dir="rtl"] {
+  font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html[dir="ltr"] {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --- Atmospheric Studio Background --- */
+body {
+  background-color: #070b14;
+  background-image: 
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(16, 185, 129, 0.10), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 35%, rgba(6, 182, 212, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(7, 11, 20, 0.35) 0%, rgba(7, 11, 20, 0.65) 45%, rgba(7, 11, 20, 0.88) 100%),
+    url('./assets/studio_bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Cinema Viewfinder Marks */
+.viewfinder-crosshair {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+.vf-tl { top: 20px; start: 20px; border-top: 1.5px solid; border-inline-start: 1.5px solid; }
+.vf-tr { top: 20px; end: 20px; border-top: 1.5px solid; border-inline-end: 1.5px solid; }
+.vf-bl { bottom: 20px; start: 20px; border-bottom: 1.5px solid; border-inline-start: 1.5px solid; }
+.vf-br { bottom: 20px; end: 20px; border-bottom: 1.5px solid; border-inline-end: 1.5px solid; }
+
+/* --- Gentle Scroll-Reveal Animation --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero elements appear immediately on load without waiting for scroll */
+#hero .reveal {
+  opacity: 1;
+  transform: none;
+  animation: heroEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+#hero .delay-200 {
+  animation-delay: 0.15s;
+}
+
+#hero .delay-300 {
+  animation-delay: 0.3s;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger Delays for Cascade Appearance in other sections */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Accessible Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Subtle video hover zoom */
+.video-thumb-box video {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.video-thumb-box:hover video {
+  transform: scale(1.04);
+}
+
+/* Active Navbar Link Highlight */
+.nav-item.active {
+  color: #10b981;
+}
+
+/* Clean Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #070b14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f293d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
