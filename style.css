@@ -3,6 +3,29 @@
    Cinematic Studio Background, Gentle Scroll Reveals & Soft Transitions
    ========================================================================== */
 
+/* Anchor jumps land below the sticky header */
+html {
+  scroll-padding-top: 4.5rem;
+}
+@media (min-width: 640px) {
+  html { scroll-padding-top: 5.5rem; }
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Remove the grey tap flash on mobile */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Typography by Direction */
 html[dir="rtl"] {
   font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -20,11 +43,29 @@ body {
     radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.18), transparent 50%),
     radial-gradient(circle at 15% 45%, rgba(16, 185, 129, 0.10), transparent 45%),
     linear-gradient(180deg, rgba(5, 8, 17, 0.02) 0%, rgba(5, 8, 17, 0.18) 35%, rgba(5, 8, 17, 0.72) 72%, #050811 100%),
-    url('./assets/studio_bg.jpg');
+    url('./assets/studio_bg.webp');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: clip;
+}
+
+/* Fixed backgrounds are broken/janky on mobile browsers (iOS zooms the image) */
+@media (max-width: 767px), (hover: none) {
+  body {
+    background-attachment: scroll;
+    background-size: auto 100vh;
+  }
+}
+
+/* Horizontal scroll rows (category filters on mobile) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* High-Tech 3D Perspective Virtual Soundstage Floor */
@@ -96,6 +137,10 @@ body {
 
 /* Accessible Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+  .ambient-orb,
+  .animate-pulse-slow {
+    animation: none !important;
+  }
   .reveal {
     opacity: 1 !important;
     transform: none !important;

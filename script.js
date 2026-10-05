@@ -16,6 +16,7 @@ const translations = {
     "nav.about": "عن محمود",
     "nav.contact": "تواصل معي",
     "nav.talk": "تواصل واتساب",
+    "nav.waLabel": "واتساب",
 
     // Hero
     "hero.badge": "خريج الجامعة الإسلامية بغزة 2026 • تكنولوجيا معلومات (IT)",
@@ -51,20 +52,28 @@ const translations = {
     "s2.desc": "تخطيط واستهداف دقيق وتحسين معدلات التحويل (CRO) لضمان تحقيق أعلى عائد على الإنفاق الإعلاني (ROAS).",
     "s3.title": "الربط التقني وتتبع البيكسل",
     "s3.desc": "إعداد وتتبع Meta Pixel و CAPI مع ربط دقيق بمتجرك لضمان قياس كل عملية بيع بدقة وبناء جماهير إعادة الاستهداف.",
+    "s1.t1": "جودة 4K",
+    "s1.t2": "ريلز وسناب",
+    "s1.t3": "تعليق صوتي AI",
+    "s2.t2": "استهداف المشترين",
+    "s2.t3": "أعلى ROAS",
+    "s3.t3": "قياس المبيعات",
 
     // Contact
     "contact.badge": "جاهز للتعاون",
     "contact.title": "هل ترغب بإطلاق إعلان فيديو مميز لمتجرك؟",
     "contact.desc": "تواصل معي مباشرة لمناقشة فكرة مشروعك والبدء بإنتاج فيديوهات إعلانية مخصصة ترفع مبيعاتك.",
-    "contact.btnWa": "محادثة فورية على واتساب",
-    "contact.formTitle": "أو أرسل تفاصيل مشروعك",
+    "contact.waBtn": "محادثة فورية على واتساب",
+    "contact.or": "أو أرسل تفاصيل مشروعك",
     "f.name": "الاسم / اسم النشاط التجاري",
-    "f.phone": "رقم الهاتف / الواتساب",
+    "f.namePh": "أدخل اسمك",
+    "f.contact": "رقم الهاتف / الواتساب",
     "f.service": "الخدمة المطلوبة",
     "f.opt1": "صناعة فيديوهات إعلانية بالذكاء الاصطناعي",
     "f.opt2": "إدارة حملات إعلانية ممولة",
     "f.opt3": "بكج كامل (فيديو + إدارة حملات)",
     "f.msg": "تفاصيل المشروع أو رابط منتجك",
+    "f.msgPh": "اكتب نبذة عن مجالك...",
     "f.send": "إرسال التفاصيل عبر واتساب",
 
     // Modal
@@ -83,6 +92,7 @@ const translations = {
     "nav.about": "About",
     "nav.contact": "Contact",
     "nav.talk": "Chat on WhatsApp",
+    "nav.waLabel": "WhatsApp",
 
     // Hero
     "hero.badge": "Islamic University of Gaza Alum 2026 • IT & Software Development",
@@ -118,20 +128,28 @@ const translations = {
     "s2.desc": "Precision targeting, funnel architecture, and CRO to maximize your Return on Ad Spend (ROAS) on Meta & TikTok.",
     "s3.title": "Technical Tracking & Pixel",
     "s3.desc": "Full Meta Pixel & CAPI server-side tracking setup to measure every conversion accurately and build retargeting audiences.",
+    "s1.t1": "4K Quality",
+    "s1.t2": "Reels & Snap",
+    "s1.t3": "AI Voiceover",
+    "s2.t2": "Buyer Targeting",
+    "s2.t3": "Max ROAS",
+    "s3.t3": "Sales Tracking",
 
     // Contact
     "contact.badge": "Open for Collaborations",
     "contact.title": "Ready to launch high-converting video ads?",
     "contact.desc": "Reach out directly to discuss your brand and start producing bespoke AI video ads that scale your revenue.",
-    "contact.btnWa": "Instant WhatsApp Chat",
-    "contact.formTitle": "Or Send Project Details",
+    "contact.waBtn": "Instant WhatsApp Chat",
+    "contact.or": "Or Send Project Details",
     "f.name": "Your Name / Brand Name",
-    "f.phone": "Phone / WhatsApp Number",
+    "f.namePh": "Enter your name",
+    "f.contact": "Phone / WhatsApp Number",
     "f.service": "Required Service",
     "f.opt1": "AI Commercial Video Production",
     "f.opt2": "Paid Ads Management",
     "f.opt3": "Full Package (Video + Paid Ads)",
     "f.msg": "Your Message or Product Details",
+    "f.msgPh": "Tell me a bit about your business...",
     "f.send": "Send Details via WhatsApp",
 
     // Modal
@@ -151,7 +169,7 @@ const videoList = [
     catEn: "Tech & Electronics",
     categoryKey: "tech",
     src: "./assets/videos/video_1.mp4",
-    poster: "./assets/thumbnails/thumb_1.jpg",
+    poster: "./assets/thumbnails/thumb_1.webp",
     descAr: "إعلان سينمائي واقعي للأجهزة الذكية مع إضاءة استوديو ديناميكية وإبراز تفاصيل الهواتف لزيادة المبيعات.",
     descEn: "Photorealistic AI commercial for smartphones and devices with dynamic studio lighting to boost sales."
   },
@@ -163,7 +181,7 @@ const videoList = [
     catEn: "Food & Dining",
     categoryKey: "food",
     src: "./assets/videos/video_2.mp4",
-    poster: "./assets/thumbnails/thumb_2.jpg",
+    poster: "./assets/thumbnails/thumb_2.webp",
     descAr: "إعلان يثير حواس التذوق ويجمع بين تقطيع اللحوم الطازجة واللهب المتصاعد على الجريل لرفع حجوزات المطاعم.",
     descEn: "Sensory-rich food commercial with marbled beef cuts and flame grill flare-ups to maximize reservations."
   },
@@ -175,7 +193,7 @@ const videoList = [
     catEn: "Sweets & Pastry",
     categoryKey: "sweets",
     src: "./assets/videos/video_3.mp4",
-    poster: "./assets/thumbnails/thumb_3.jpg",
+    poster: "./assets/thumbnails/thumb_3.webp",
     descAr: "إعلان تراثي دافئ وفاخر يعكس كرم الضيافة وأصالة معمول التمر والحلويات، مناسب جداً لمواسم الأعياد.",
     descEn: "Warm, heritage commercial celebrating authentic ma'amoul, date cookies, and oriental pastries."
   },
@@ -187,7 +205,7 @@ const videoList = [
     catEn: "Fashion & Apparel",
     categoryKey: "fashion",
     src: "./assets/videos/video_4.mp4",
-    poster: "./assets/thumbnails/thumb_4.jpg",
+    poster: "./assets/thumbnails/thumb_4.webp",
     descAr: "إعلان يعتمد على تقنية الانتقال السحري الفوري إلى بدلة السهرة الأنيقة في ثانية واحدة لإبهار المشاهد.",
     descEn: "High-tempo commercial featuring an instant magic VFX transformation into a luxury tuxedo suit."
   },
@@ -199,7 +217,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_5.mp4",
-    poster: "./assets/thumbnails/thumb_5.jpg",
+    poster: "./assets/thumbnails/thumb_5.webp",
     descAr: "إعلان ترويجي لعروض العناية بالبشرة مع حركة ثلاثية الأبعاد للمنتجات وفقاعات ماء عائمة وألوان ناعمة.",
     descEn: "Beauty promo for skincare routine with floating 3D water spheres, pastel pink tones, and smooth motion."
   },
@@ -211,7 +229,7 @@ const videoList = [
     catEn: "Food & Dining",
     categoryKey: "food",
     src: "./assets/videos/video_6.mp4",
-    poster: "./assets/thumbnails/thumb_6.jpg",
+    poster: "./assets/thumbnails/thumb_6.webp",
     descAr: "إعلان حركي سريع لقطع الدجاج المقرمش المتطاير وساندوتشات التورتيلا وصوصات التغميس الشهية.",
     descEn: "Dynamic fast-paced commercial featuring flying crispy chicken tenders, loaded wraps, and tasty dips."
   },
@@ -223,7 +241,7 @@ const videoList = [
     catEn: "Food & Dining",
     categoryKey: "food",
     src: "./assets/videos/video_7.mp4",
-    poster: "./assets/thumbnails/thumb_7.jpg",
+    poster: "./assets/thumbnails/thumb_7.webp",
     descAr: "إعلان أسلوب حياة وتجربة واقعية لتناول والاستمتاع بوجبة كريسبي ضخمة بطريقة تزيد شهية المشاهد وتدفعه للطلب.",
     descEn: "Engaging lifestyle tasting ad showing genuine satisfaction eating a massive loaded crispy meal."
   },
@@ -235,7 +253,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_8.mp4",
-    poster: "./assets/thumbnails/thumb_8.jpg",
+    poster: "./assets/thumbnails/thumb_8.webp",
     descAr: "إعلان تسويقي فاخر لمستحضرات التجميل وفرش الميك أب أمام المرآة المضيئة في غرفة الملابس العصرية.",
     descEn: "Glamorous beauty commercial featuring makeup palettes and brushes in a modern illuminated vanity setting."
   },
@@ -247,7 +265,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_9.mp4",
-    poster: "./assets/thumbnails/thumb_9.jpg",
+    poster: "./assets/thumbnails/thumb_9.webp",
     descAr: "إعلان بوتيك خيالي ساحر باللون الوردي والذهبي يعرض العطور وأحمر الشفاه الفاخر بتأثيرات بصرية مبهرة.",
     descEn: "Dreamy pink-and-gold boutique commercial showcasing luxury perfumes and cosmetics in an upscale aesthetic."
   },
@@ -259,7 +277,7 @@ const videoList = [
     catEn: "Sweets & Pastry",
     categoryKey: "sweets",
     src: "./assets/videos/video_10.mp4",
-    poster: "./assets/thumbnails/thumb_10.jpg",
+    poster: "./assets/thumbnails/thumb_10.webp",
     descAr: "إعلان يبرز تفاصيل الكنافة الذهبية المقرمشة بالفستق الحلبي وطبقات القشطة الطازجة لجذب عشاق الحلويات.",
     descEn: "Mouth-watering commercial showcasing golden crunchy kunafa loaded with pistachios and fresh cream."
   },
@@ -271,7 +289,7 @@ const videoList = [
     catEn: "Services & Events",
     categoryKey: "services",
     src: "./assets/videos/video_11.mp4",
-    poster: "./assets/thumbnails/thumb_11.jpg",
+    poster: "./assets/thumbnails/thumb_11.webp",
     descAr: "إعلان قصة واقعية لطلب الطعام أثناء العمل والدراسة ووصوله ساخناً وسريعاً لباب المنزل مع كابتن التوصيل.",
     descEn: "Relatable storytelling ad showing fast food delivery to the doorstep for busy students and professionals."
   },
@@ -283,7 +301,7 @@ const videoList = [
     catEn: "Tech & Electronics",
     categoryKey: "tech",
     src: "./assets/videos/video_12.mp4",
-    poster: "./assets/thumbnails/thumb_12.jpg",
+    poster: "./assets/thumbnails/thumb_12.webp",
     descAr: "إعلان ترويجي لأجهزة الجيمنج ولابتوبات TUF وشاشات الألعاب والكيبوردات المضيئة RGB للاعبين وصناع المحتوى.",
     descEn: "High-octane tech commercial featuring pro RGB gaming rigs, TUF laptops, and ultra-wide battle stations."
   },
@@ -295,7 +313,7 @@ const videoList = [
     catEn: "Fitness & Gym",
     categoryKey: "fitness",
     src: "./assets/videos/video_13.mp4",
-    poster: "./assets/thumbnails/thumb_13.jpg",
+    poster: "./assets/thumbnails/thumb_13.webp",
     descAr: "إعلان حيوي لصالات الجيم النسائية والمدربات الخاصات مع التركيز على النشاط وبناء الجسم الرشيق والصحي.",
     descEn: "Energetic women's fitness commercial focusing on personalized coaching, strength, and healthy lifestyle."
   },
@@ -307,7 +325,7 @@ const videoList = [
     catEn: "Fashion & Apparel",
     categoryKey: "fashion",
     src: "./assets/videos/video_14.mp4",
-    poster: "./assets/thumbnails/thumb_14.jpg",
+    poster: "./assets/thumbnails/thumb_14.webp",
     descAr: "إعلان ممتع وعصري لأطفال يستعرضون ملابس وموديلات الصيف والأعياد داخل متجر أزياء متكامل.",
     descEn: "Charming fashion commercial featuring kids rocking stylish summer and holiday outfits inside a boutique."
   },
@@ -319,7 +337,7 @@ const videoList = [
     catEn: "Fitness & Gym",
     categoryKey: "fitness",
     src: "./assets/videos/video_15.mp4",
-    poster: "./assets/thumbnails/thumb_15.jpg",
+    poster: "./assets/thumbnails/thumb_15.webp",
     descAr: "إعلان تحفيزي قوي بأسلوب رياضي سينمائي مع حبال المقاومة والتمارين المكثفة لزيادة اشتراكات الجيم.",
     descEn: "Inspiring sports commercial highlighting intense battle ropes, endurance training, and gym memberships."
   },
@@ -331,7 +349,7 @@ const videoList = [
     catEn: "Fitness & Gym",
     categoryKey: "fitness",
     src: "./assets/videos/video_16.mp4",
-    poster: "./assets/thumbnails/thumb_16.jpg",
+    poster: "./assets/thumbnails/thumb_16.webp",
     descAr: "إعلان رياضي رجالي يبرز روح الانضباط ورفع الأثقال والأوزان الثقيلة في استوديو جيم ذو إضاءة احترافية.",
     descEn: "Powerful men's bodybuilding ad showcasing heavy lifting, discipline, and dark aesthetic gym atmosphere."
   },
@@ -343,7 +361,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_17.mp4",
-    poster: "./assets/thumbnails/thumb_17.jpg",
+    poster: "./assets/thumbnails/thumb_17.webp",
     descAr: "إعلان طبي تجميلي هادئ وراقي لجلسات إزالة الشعر بالليزر وتنظيف البشرة العميق والهيدرافيشل.",
     descEn: "Serene aesthetic medical commercial for advanced laser hair removal and rejuvenating hydrafacial treatments."
   },
@@ -355,7 +373,7 @@ const videoList = [
     catEn: "Sweets & Pastry",
     categoryKey: "sweets",
     src: "./assets/videos/video_18.mp4",
-    poster: "./assets/thumbnails/thumb_18.jpg",
+    poster: "./assets/thumbnails/thumb_18.webp",
     descAr: "إعلان يعرض صناديق الضيافة الفاخرة وشاي الكرم وحلويات البرازق وكعك العيد المغطى بالسمسم الذهبي.",
     descEn: "Delectable hospitality commercial highlighting luxury cookie gift boxes paired with authentic tea."
   },
@@ -367,7 +385,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_19.mp4",
-    poster: "./assets/thumbnails/thumb_19.jpg",
+    poster: "./assets/thumbnails/thumb_19.webp",
     descAr: "إعلان مستحضرات علاج الشعر بالكيراتين والزيوت الطبيعية مع إظهار النعومة واللمعان الحريري للشعر.",
     descEn: "Salon-grade haircare commercial demonstrating the transformative smoothness and silk shine of keratin treatments."
   },
@@ -379,7 +397,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_20.mp4",
-    poster: "./assets/thumbnails/thumb_20.jpg",
+    poster: "./assets/thumbnails/thumb_20.webp",
     descAr: "إعلان عيادة أسنان يركز على استعادة الثقة بالابتسامة الناصعة البيضاء وتفاصيل الفحص والعلاج الدقيق.",
     descEn: "Confident dental clinic commercial featuring cosmetic dentistry, teeth whitening, and bright smiles."
   },
@@ -391,7 +409,7 @@ const videoList = [
     catEn: "Services & Events",
     categoryKey: "services",
     src: "./assets/videos/video_21.mp4",
-    poster: "./assets/thumbnails/thumb_21.jpg",
+    poster: "./assets/thumbnails/thumb_21.webp",
     descAr: "إعلان لقاعات الأعراس الملكية بالثريات الكريستالية وتنسيقات البالونات وطاولات الضيافة الفخمة.",
     descEn: "Majestic wedding venue commercial showcasing sparkling chandeliers, floral arches, and banquet setups."
   },
@@ -403,7 +421,7 @@ const videoList = [
     catEn: "Services & Events",
     categoryKey: "services",
     src: "./assets/videos/video_22.mp4",
-    poster: "./assets/thumbnails/thumb_22.jpg",
+    poster: "./assets/thumbnails/thumb_22.webp",
     descAr: "إعلان قصة عطل مفاجئ للسيارة والحل الفوري عبر خدمات الصيانة وقطع الغيار وخدمة الطريق السريعة.",
     descEn: "Dynamic automotive service commercial highlighting prompt roadside assistance and expert mechanics."
   },
@@ -415,7 +433,7 @@ const videoList = [
     catEn: "Beauty & Care",
     categoryKey: "beauty",
     src: "./assets/videos/video_23.mp4",
-    poster: "./assets/thumbnails/thumb_23.jpg",
+    poster: "./assets/thumbnails/thumb_23.webp",
     descAr: "إعلان عيادة تجميل ونحت قوام وفيلر مع طاقم طبي متخصص وأحدث الأجهزة الطبية المعتمدة.",
     descEn: "Medical aesthetics commercial showcasing advanced body contouring, sculpting, and anti-aging treatments."
   },
@@ -427,7 +445,7 @@ const videoList = [
     catEn: "Fitness & Gym",
     categoryKey: "fitness",
     src: "./assets/videos/video_24.mp4",
-    poster: "./assets/thumbnails/thumb_24.jpg",
+    poster: "./assets/thumbnails/thumb_24.webp",
     descAr: "إعلان حماسي سريع يجمع بين تمارين السلم الرياضي والكارديو ورفع الأثقال لتحفيز الشباب على الاشتراك.",
     descEn: "High-intensity athletic gym commercial combining stairmaster cardio, sprints, and deadlift power."
   }
@@ -460,28 +478,49 @@ function renderVideoCards(filter = "all") {
     : videoList.filter(v => v.categoryKey === filter);
 
   container.innerHTML = list.map((v, i) => `
-    <div class="video-card bg-[#101726]/85 backdrop-blur-md border border-slate-800 rounded-xl p-2.5 flex flex-col justify-between hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 shadow-lg group/card" data-category="${v.categoryKey}" data-id="${v.id}">
+    <div class="video-card bg-[#101726]/95 sm:bg-[#101726]/85 sm:backdrop-blur-md border border-slate-800 rounded-xl p-2 sm:p-2.5 flex flex-col justify-between hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 shadow-lg group/card" data-category="${v.categoryKey}" data-id="${v.id}">
       <div>
         <div class="relative w-full aspect-[9/16] rounded-lg overflow-hidden bg-black cursor-pointer group video-thumb-box">
-          <video class="w-full h-full object-cover card-video" src="${v.src}" poster="${v.poster}" muted playsinline loop preload="none"></video>
+          <video class="w-full h-full object-cover card-video" src="${v.src}" data-poster="${v.poster}" muted playsinline loop preload="none"></video>
           <div class="absolute inset-0 bg-black/35 group-hover:bg-transparent transition-colors flex items-center justify-center pointer-events-none">
-            <div class="w-10 h-10 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
               <svg class="w-4 h-4 fill-current ps-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
-          <span class="absolute top-2 start-2 px-2 py-0.5 bg-black/75 backdrop-blur-sm text-[10px] rounded text-emerald-400 font-medium">${isEn ? v.catEn : v.catAr}</span>
+          <span class="absolute top-1.5 start-1.5 sm:top-2 sm:start-2 px-1.5 sm:px-2 py-0.5 bg-black/75 text-[10px] rounded text-emerald-400 font-medium">${isEn ? v.catEn : v.catAr}</span>
         </div>
-        <h3 class="text-xs font-bold text-white mt-3 mb-1 line-clamp-1 group-hover/card:text-emerald-400 transition-colors">${isEn ? v.titleEn : v.titleAr}</h3>
-        <p class="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">${isEn ? v.descEn : v.descAr}</p>
+        <h3 class="text-[11px] sm:text-xs font-bold text-white mt-2 sm:mt-3 mb-1 line-clamp-1 group-hover/card:text-emerald-400 transition-colors">${isEn ? v.titleEn : v.titleAr}</h3>
+        <p class="text-[10px] sm:text-[11px] text-slate-400 line-clamp-2 leading-relaxed">${isEn ? v.descEn : v.descAr}</p>
       </div>
-      <button class="open-modal-btn w-full mt-3 py-1.5 bg-slate-800/80 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5" data-id="${v.id}">
+      <button class="open-modal-btn w-full mt-2 sm:mt-3 py-2 sm:py-1.5 bg-slate-800/80 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5" data-id="${v.id}">
         <svg class="w-3 h-3 fill-current ps-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         <span>${isEn ? "Watch Video" : "تشغيل الفيديو"}</span>
       </button>
     </div>
   `).join("");
 
+  lazyLoadPosters(container);
   bindVideoEvents();
+}
+
+// Load card thumbnails only when they approach the viewport (saves mobile data)
+let posterObserver = null;
+function lazyLoadPosters(container) {
+  const videos = container.querySelectorAll("video[data-poster]");
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(v => { v.poster = v.dataset.poster; });
+    return;
+  }
+  if (posterObserver) posterObserver.disconnect();
+  posterObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.poster = entry.target.dataset.poster;
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: "400px 0px" });
+  videos.forEach(v => posterObserver.observe(v));
 }
 
 // Bind Hover Preview & Modal Click
@@ -495,21 +534,24 @@ function bindVideoEvents() {
   const modalCat = document.getElementById("modalCat");
   const modalDesc = document.getElementById("modalDesc");
   const modalWaBtn = document.getElementById("modalWaBtn");
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   cards.forEach(card => {
     const video = card.querySelector(".card-video");
     if (!video) return;
 
-    // Hover Preview
-    card.addEventListener("mouseenter", () => {
-      video.muted = true;
-      video.play().catch(() => {});
-    });
+    // Hover Preview (desktop only)
+    if (canHover) {
+      card.addEventListener("mouseenter", () => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
 
-    card.addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
 
     // Open Modal on Card Click or Button Click
     const openBtn = card.querySelector(".open-modal-btn");
@@ -627,11 +669,22 @@ function applyLang(lang) {
   if (langText) {
     langText.textContent = isEn ? "العربية" : "English";
   }
+  const langTextShort = document.getElementById("langTextShort");
+  if (langTextShort) {
+    langTextShort.textContent = isEn ? "ع" : "EN";
+  }
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
       el.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => {
+    const key = el.getAttribute("data-i18n-ph");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
     }
   });
 
@@ -695,7 +748,8 @@ function initContactForm() {
     e.preventDefault();
     const name = document.getElementById("formName").value.trim();
     const contact = document.getElementById("formContact").value.trim();
-    const service = document.getElementById("formService").value;
+    const serviceSelect = document.getElementById("formService");
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
     const msg = document.getElementById("formMsg").value.trim();
 
     const isEn = currentLang === "en";
@@ -726,18 +780,25 @@ function initContactForm() {
 function initMobileMenu() {
   const btn = document.getElementById("mobileMenuBtn");
   const drawer = document.getElementById("mobileDrawer");
-  const links = document.querySelectorAll(".mobile-link");
-
+  
   if (!btn || !drawer) return;
 
+  const iconOpen = document.getElementById("menuIconOpen");
+  const iconClose = document.getElementById("menuIconClose");
+
+  const setOpen = open => {
+    drawer.classList.toggle("hidden", !open);
+    btn.setAttribute("aria-expanded", String(open));
+    if (iconOpen) iconOpen.classList.toggle("hidden", open);
+    if (iconClose) iconClose.classList.toggle("hidden", !open);
+  };
+
   btn.addEventListener("click", () => {
-    drawer.classList.toggle("hidden");
+    setOpen(drawer.classList.contains("hidden"));
   });
 
-  links.forEach(l => {
-    l.addEventListener("click", () => {
-      drawer.classList.add("hidden");
-    });
+  drawer.querySelectorAll("a").forEach(l => {
+    l.addEventListener("click", () => setOpen(false));
   });
 }
 
@@ -768,7 +829,7 @@ function initStudioParticles() {
     { r: 245, g: 158, b: 11 }  // Warm tungsten ember
   ];
 
-  const particleCount = Math.min(45, Math.max(25, Math.floor(width / 35)));
+  const particleCount = width < 768 ? 16 : Math.min(45, Math.max(25, Math.floor(width / 35)));
   const particles = [];
 
   for (let i = 0; i < particleCount; i++) {
@@ -871,7 +932,7 @@ function initScrollReveal() {
 // Interactive Ambient Cursor Spotlight & Living Studio Lighting
 function initMouseGlow() {
   const glow = document.getElementById("mouseGlow");
-  if (!glow) return;
+  if (!glow || getComputedStyle(glow).display === "none") return;
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 3;
