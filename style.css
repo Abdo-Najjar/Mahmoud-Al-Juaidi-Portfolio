@@ -14,11 +14,12 @@ html[dir="ltr"] {
 
 /* --- Atmospheric Studio Background --- */
 body {
-  background-color: #070b14;
+  background-color: #050811;
   background-image: 
-    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(16, 185, 129, 0.10), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 85% 35%, rgba(6, 182, 212, 0.08), transparent 70%),
-    linear-gradient(180deg, rgba(7, 11, 20, 0.35) 0%, rgba(7, 11, 20, 0.65) 45%, rgba(7, 11, 20, 0.88) 100%),
+    radial-gradient(ellipse 70% 45% at 50% -5%, rgba(16, 185, 129, 0.22), transparent 70%),
+    radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.18), transparent 50%),
+    radial-gradient(circle at 15% 45%, rgba(16, 185, 129, 0.10), transparent 45%),
+    linear-gradient(180deg, rgba(5, 8, 17, 0.02) 0%, rgba(5, 8, 17, 0.18) 35%, rgba(5, 8, 17, 0.72) 72%, #050811 100%),
     url('./assets/studio_bg.jpg');
   background-size: cover;
   background-position: center top;
@@ -26,18 +27,26 @@ body {
   background-attachment: fixed;
 }
 
-/* Cinema Viewfinder Marks */
-.viewfinder-crosshair {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: rgba(255, 255, 255, 0.15);
-  pointer-events: none;
+/* High-Tech 3D Perspective Virtual Soundstage Floor */
+.perspective-grid {
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.15) 1px, transparent 1px);
+  background-size: 48px 48px;
+  transform: perspective(320px) rotateX(65deg);
+  transform-origin: bottom center;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 85%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 85%);
 }
-.vf-tl { top: 20px; start: 20px; border-top: 1.5px solid; border-inline-start: 1.5px solid; }
-.vf-tr { top: 20px; end: 20px; border-top: 1.5px solid; border-inline-end: 1.5px solid; }
-.vf-bl { bottom: 20px; start: 20px; border-bottom: 1.5px solid; border-inline-start: 1.5px solid; }
-.vf-br { bottom: 20px; end: 20px; border-bottom: 1.5px solid; border-inline-end: 1.5px solid; }
+
+@keyframes slowPulse {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(1.06); }
+}
+
+.animate-pulse-slow {
+  animation: slowPulse 8s ease-in-out infinite;
+}
 
 /* --- Gentle Scroll-Reveal Animation --- */
 .reveal {
@@ -137,3 +146,26 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Card Elevation & Refined Hover (from UI/UX Pro Max) */
+.video-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.video-card:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.75), 0 0 26px -6px rgba(16, 185, 129, 0.22);
+}
+
+/* Atmospheric Glow Breathing Animation */
+@keyframes glowBreathing {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.06); }
+}
+
+.ambient-orb {
+  animation: glowBreathing 9s ease-in-out infinite;
+}
+

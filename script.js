@@ -25,6 +25,7 @@ const translations = {
     "hero.viewWork": "استعرض الفيديوهات (24 نموذج)",
     "hero.contactBtn": "تواصل معي مباشرة",
     "hero.scrollDown": "استكشف الأعمال",
+    "hero.photoRole": "خبير إعلانات AI",
 
     // Work Section
     "work.title": "معرض الأعمال والفيديوهات (24 نموذج واقعي)",
@@ -46,11 +47,11 @@ const translations = {
     "about.p2": "خلال مسيرتي، وظّفت العقلية البرمجية والتحليلية في مجال <strong>صناعة فيديوهات الذكاء الاصطناعي التوليدي</strong> وإدارة <strong>الحملات الإعلانية الممولة (Media Buying)</strong> على منصات فيسبوك، إنستغرام، تيك توك، وسناب شات.",
     "about.p3": "هدفي هو مساعدة المتاجر والأنشطة التجارية على الوصول لعملاء مهتمين ومضاعفة المبيعات بأقل تكلفة ممكنة، من خلال الجمع بين جاذبية الإعلان البصري ودقة الاستهداف الإعلاني.",
     "s1.title": "فيديوهات إعلانية ذكية (AI)",
-    "s1.desc": "إنتاج إعلانات بصرية بجودة سينمائية مخصصة للسوشيال ميديا بدون تكاليف تصوير تقليدي باهظة.",
+    "s1.desc": "إنتاج مشاهد بصرية سينمائية مع تعليق صوتي واقعي ومؤثرات مصممة للريلز والتيك توك دون تكاليف تصوير تقليدية باهظة.",
     "s2.title": "إدارة الحملات الممولة",
     "s2.desc": "تخطيط واستهداف دقيق وتحسين معدلات التحويل (CRO) لضمان تحقيق أعلى عائد على الإنفاق الإعلاني (ROAS).",
     "s3.title": "الربط التقني وتتبع البيكسل",
-    "s3.desc": "إعداد Meta Pixel و CAPI وربط متجرك لضمان قياس كل عملية بيع بدقة.",
+    "s3.desc": "إعداد وتتبع Meta Pixel و CAPI مع ربط دقيق بمتجرك لضمان قياس كل عملية بيع بدقة وبناء جماهير إعادة الاستهداف.",
 
     // Contact
     "contact.badge": "جاهز للتعاون",
@@ -92,6 +93,7 @@ const translations = {
     "hero.viewWork": "Explore Videos (24 Ads)",
     "hero.contactBtn": "Get in Touch",
     "hero.scrollDown": "Explore Portfolio",
+    "hero.photoRole": "AI Ads Specialist",
 
     // Work Section
     "work.title": "Commercial Portfolio (24 Real Ads)",
@@ -113,11 +115,11 @@ const translations = {
     "about.p2": "Throughout my career, I've leveraged analytical programming thinking in <strong>Generative AI Video Production</strong> and <strong>Performance Media Buying</strong> across Facebook, Instagram, TikTok, and Snapchat.",
     "about.p3": "My mission is helping e-commerce brands and local businesses scale profitably with creative commercial visuals combined with hyper-targeted ad campaigns.",
     "s1.title": "AI Video Production",
-    "s1.desc": "Cinema-grade commercial ads customized for social reels without prohibitive traditional production costs.",
+    "s1.desc": "Cinema-grade commercial ads customized for TikTok, Reels, and Snapchat with realistic voiceovers and VFX.",
     "s2.title": "Paid Media Buying",
-    "s2.desc": "Precision targeting, funnel architecture, and CRO to maximize your Return on Ad Spend (ROAS).",
+    "s2.desc": "Precision targeting, funnel architecture, and CRO to maximize your Return on Ad Spend (ROAS) on Meta & TikTok.",
     "s3.title": "Technical Tracking & Pixel",
-    "s3.desc": "Full Meta Pixel & CAPI server-side tracking setup to measure every conversion accurately.",
+    "s3.desc": "Full Meta Pixel & CAPI server-side tracking setup to measure every conversion accurately and build retargeting audiences.",
 
     // Contact
     "contact.badge": "Open for Collaborations",
@@ -445,6 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBackToTop();
   initScrollSpy();
   initStudioParticles();
+  initMouseGlow();
   initScrollReveal();
 });
 
@@ -474,7 +477,7 @@ function renderVideoCards(filter = "all") {
         <p class="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">${isEn ? v.descEn : v.descAr}</p>
       </div>
       <button class="open-modal-btn w-full mt-3 py-1.5 bg-slate-800/80 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5" data-id="${v.id}">
-        <span>▶</span>
+        <svg class="w-3 h-3 fill-current ps-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         <span>${isEn ? "Watch Video" : "تشغيل الفيديو"}</span>
       </button>
     </div>
@@ -740,7 +743,7 @@ function initMobileMenu() {
   });
 }
 
-// Ambient Cinema Studio Dust Particles
+// Ambient Cinema Studio Dust & Luminescent Embers
 function initStudioParticles() {
   const canvas = document.getElementById("studioParticles");
   if (!canvas) return;
@@ -759,27 +762,33 @@ function initStudioParticles() {
     height = canvas.height = window.innerHeight;
   });
 
-  const colors = [
-    "rgba(16, 185, 129, ",  // Emerald
-    "rgba(6, 182, 212, ",   // Cyan
-    "rgba(245, 158, 11, ",  // Warm tungsten gold
-    "rgba(148, 163, 184, "  // Soft slate
+  // Particle color palette: Emerald, Cyan, Teal, Gold Amber
+  const palette = [
+    { r: 16, g: 185, b: 129 }, // Emerald
+    { r: 6, g: 182, b: 212 },  // Cyan
+    { r: 20, g: 184, b: 166 }, // Teal
+    { r: 245, g: 158, b: 11 }  // Warm tungsten ember
   ];
 
-  const particleCount = Math.min(30, Math.floor(width / 50));
+  const particleCount = Math.min(45, Math.max(25, Math.floor(width / 35)));
   const particles = [];
 
   for (let i = 0; i < particleCount; i++) {
+    const col = palette[Math.floor(Math.random() * palette.length)];
+    const z = Math.random(); // 0 (far) to 1 (near)
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 1.5 + 0.6,
-      colorPrefix: colors[Math.floor(Math.random() * colors.length)],
-      baseAlpha: Math.random() * 0.25 + 0.1,
-      alpha: 0.1,
+      radius: z * 2.2 + 0.8,
+      r: col.r,
+      g: col.g,
+      b: col.b,
+      baseAlpha: z * 0.40 + 0.25,
+      alpha: 0.25,
       phase: Math.random() * Math.PI * 2,
-      speedY: -(Math.random() * 0.22 + 0.08),
-      speedX: (Math.random() - 0.5) * 0.12
+      speedY: -((1 - z * 0.4) * 0.35 + 0.1),
+      speedX: (Math.random() - 0.5) * 0.25,
+      z: z
     });
   }
 
@@ -790,21 +799,35 @@ function initStudioParticles() {
       const p = particles[i];
       p.y += p.speedY;
       p.x += p.speedX;
-      p.phase += 0.015;
+      p.phase += 0.018;
 
       p.alpha = p.baseAlpha * (0.65 + 0.35 * Math.sin(p.phase));
 
-      if (p.y < -10) {
-        p.y = height + 10;
+      if (p.y < -20) {
+        p.y = height + 20;
         p.x = Math.random() * width;
       }
-      if (p.x < -10) p.x = width + 10;
-      if (p.x > width + 10) p.x = -10;
+      if (p.x < -20) p.x = width + 20;
+      if (p.x > width + 20) p.x = -20;
+
+      // Draw soft glowing ember halo
+      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 3.5);
+      grad.addColorStop(0, `rgba(${p.r}, ${p.g}, ${p.b}, ${p.alpha})`);
+      grad.addColorStop(0.35, `rgba(${p.r}, ${p.g}, ${p.b}, ${p.alpha * 0.55})`);
+      grad.addColorStop(1, `rgba(${p.r}, ${p.g}, ${p.b}, 0)`);
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = p.colorPrefix + p.alpha + ")";
+      ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
       ctx.fill();
+
+      // Sharp central luminous core for closer embers
+      if (p.z > 0.45) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * 0.7, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha * 0.75})`;
+        ctx.fill();
+      }
     }
 
     requestAnimationFrame(render);
@@ -846,3 +869,55 @@ function initScrollReveal() {
     }
   });
 }
+
+// Interactive Ambient Cursor Spotlight & Living Studio Lighting
+function initMouseGlow() {
+  const glow = document.getElementById("mouseGlow");
+  if (!glow) return;
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 3;
+  let currentX = mouseX;
+  let currentY = mouseY;
+  let isIdle = true;
+  let idleTimer = null;
+  let idleAngle = 0;
+
+  window.addEventListener("mousemove", e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    isIdle = false;
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => { isIdle = true; }, 2500);
+  }, { passive: true });
+
+  window.addEventListener("touchmove", e => {
+    if (e.touches.length > 0) {
+      mouseX = e.touches[0].clientX;
+      mouseY = e.touches[0].clientY;
+      isIdle = false;
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => { isIdle = true; }, 3000);
+    }
+  }, { passive: true });
+
+  function animate() {
+    if (isIdle) {
+      idleAngle += 0.012;
+      // Gentle breathing orbit across upper studio stage
+      const targetX = window.innerWidth / 2 + Math.sin(idleAngle) * (window.innerWidth * 0.22);
+      const targetY = window.innerHeight * 0.32 + Math.cos(idleAngle * 0.7) * (window.innerHeight * 0.12);
+      currentX += (targetX - currentX) * 0.04;
+      currentY += (targetY - currentY) * 0.04;
+    } else {
+      currentX += (mouseX - currentX) * 0.08;
+      currentY += (mouseY - currentY) * 0.08;
+    }
+    glow.style.left = `${currentX}px`;
+    glow.style.top = `${currentY}px`;
+    glow.style.transform = `translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+

@@ -42,8 +42,13 @@
 </head>
 <body class="text-slate-200 font-ar antialiased min-h-screen selection:bg-emerald-500/20 selection:text-emerald-300 relative">
 
-  <!-- Ambient Cinema Studio Dust Particles -->
-  <canvas id="studioParticles" class="fixed inset-0 pointer-events-none z-0 opacity-50"></canvas>
+  <!-- Interactive Ambient Cursor Spotlight & Studio Glow Orbs -->
+  <div id="mouseGlow" class="fixed w-[650px] h-[650px] rounded-full pointer-events-none z-0 opacity-70 blur-[90px] bg-gradient-to-tr from-emerald-500/25 via-teal-500/15 to-cyan-500/20 mix-blend-screen transition-opacity duration-500"></div>
+  <div class="fixed top-1/4 -start-48 w-96 h-96 rounded-full bg-emerald-500/12 blur-[130px] pointer-events-none z-0 ambient-orb"></div>
+  <div class="fixed top-2/3 -end-48 w-96 h-96 rounded-full bg-cyan-500/12 blur-[130px] pointer-events-none z-0 ambient-orb" style="animation-delay: -4.5s;"></div>
+
+  <!-- Ambient Cinema Studio Dust & Luminescent Embers -->
+  <canvas id="studioParticles" class="fixed inset-0 pointer-events-none z-0 opacity-80 mix-blend-screen"></canvas>
 
   <!-- Clean, Elegant Header -->
   <header class="sticky top-0 z-40 bg-[#070b14]/85 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300" id="navbar">
@@ -69,8 +74,10 @@
       <!-- Actions: Language & WhatsApp -->
       <div class="flex items-center gap-3">
         <!-- Language Switcher -->
-        <button id="langToggleBtn" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-xs font-semibold text-slate-300 transition-colors flex items-center gap-1.5">
-          <span class="text-xs">🌐</span>
+        <button id="langToggleBtn" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-xs font-semibold text-slate-300 transition-colors flex items-center gap-1.5" aria-label="Toggle Language">
+          <svg class="w-3.5 h-3.5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+          </svg>
           <span id="langText">English</span>
         </button>
 
@@ -111,6 +118,14 @@
 
   <!-- Clean Hero Section with Studio Atmosphere -->
   <section class="py-16 md:py-24 relative overflow-hidden" id="hero">
+    <!-- Ambient Studio Spotlight Aura behind Hero -->
+    <div class="absolute -top-10 start-1/4 w-[600px] h-[400px] bg-gradient-to-b from-emerald-500/15 via-cyan-500/8 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow"></div>
+
+    <!-- High-Tech 3D Perspective Virtual Soundstage Floor -->
+    <div class="absolute bottom-0 inset-x-0 h-36 pointer-events-none overflow-hidden -z-10">
+      <div class="perspective-grid w-full h-full"></div>
+    </div>
+
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
@@ -140,20 +155,13 @@
 
         </div>
 
-        <!-- Hero Photo with Viewfinder Cinema Framing -->
+        <!-- Hero Photo Frame -->
         <div class="md:col-span-5 flex justify-center reveal delay-200">
           <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-slate-800/90 bg-[#101726]/85 backdrop-blur-md shadow-2xl p-2.5 transition-transform duration-500 hover:scale-[1.02]">
-            
-            <!-- Cinema Viewfinder Marks -->
-            <span class="viewfinder-crosshair vf-tl"></span>
-            <span class="viewfinder-crosshair vf-tr"></span>
-            <span class="viewfinder-crosshair vf-bl"></span>
-            <span class="viewfinder-crosshair vf-br"></span>
-
             <img src="./assets/profile_closeup.png" alt="Mahmoud Al-Juaidi" class="w-full h-[400px] object-cover object-top rounded-xl">
             <div class="pt-3 px-2 text-center">
               <span class="text-sm font-bold text-white block">محمود الجعيدي</span>
-              <span class="text-xs text-emerald-400 block mt-0.5">تطوير برمجيات IT • خبير إعلانات AI</span>
+              <span class="text-xs text-emerald-400 block mt-0.5" data-i18n="hero.photoRole">خبير إعلانات AI</span>
             </div>
           </div>
         </div>
@@ -209,13 +217,9 @@
 
   <!-- Clean About Section -->
   <section class="py-16 md:py-24" id="about">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
       
       <div class="bg-[#101726]/85 backdrop-blur-md border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-xl reveal">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-semibold mb-3">
-          <span>🎓</span>
-          <span data-i18n="about.degree">خريج الجامعة الإسلامية بغزة 2026 • تكنولوجيا معلومات (IT)</span>
-        </div>
         <h2 class="text-2xl font-bold text-white mb-4" data-i18n="about.title">نبذة عن محمود الجعيدي</h2>
         
         <div class="space-y-4 text-sm text-slate-300 leading-relaxed mb-8">
@@ -230,25 +234,72 @@
           </p>
         </div>
 
-        <!-- 3 Core Services in Clean Boxes -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800">
-          <div class="bg-[#070b14]/75 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-colors">
-            <span class="text-2xl mb-2 block">🎬</span>
-            <strong class="text-xs text-white block mb-1" data-i18n="s1.title">فيديوهات إعلانية بالـ AI</strong>
-            <span class="text-[11px] text-slate-400 block" data-i18n="s1.desc">مشاهد سينمائية، تعليق صوتي واقعي، ومؤثرات بصرية دون تكاليف تصوير باهظة.</span>
+        <!-- 3 Core Services in Visual Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-8 border-t border-slate-800/80">
+          
+          <!-- Service 1: AI Video Production -->
+          <div class="bg-[#0c1220]/90 backdrop-blur-md rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div class="relative w-full aspect-[16/10] overflow-hidden bg-slate-950">
+                <img src="./assets/services/service_1.jpg" alt="AI Commercial Video Production" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-5">
+                <h3 class="text-sm font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors" data-i18n="s1.title">فيديوهات إعلانية ذكية (AI)</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4" data-i18n="s1.desc">إنتاج مشاهد بصرية سينمائية مع تعليق صوتي واقعي ومؤثرات مصممة للريلز والتيك توك دون تكاليف تصوير تقليدية باهظة.</p>
+              </div>
+            </div>
+            <div class="px-4 pb-4 sm:px-5 sm:pb-5">
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60 text-[10px] text-emerald-400/90 font-medium">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">جودة 4K</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">ريلز وسناب</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">تعليق صوتي AI</span>
+              </div>
+            </div>
           </div>
 
-          <div class="bg-[#070b14]/75 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-colors">
-            <span class="text-2xl mb-2 block">📈</span>
-            <strong class="text-xs text-white block mb-1" data-i18n="s2.title">إدارة الحملات الممولة</strong>
-            <span class="text-[11px] text-slate-400 block" data-i18n="s2.desc">إطلاق ومتابعة الحملات على Meta وتيك توك مع استهداف دقيق للعملاء المشترين.</span>
+          <!-- Service 2: Media Buying -->
+          <div class="bg-[#0c1220]/90 backdrop-blur-md rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div class="relative w-full aspect-[16/10] overflow-hidden bg-slate-950">
+                <img src="./assets/services/service_2.jpg" alt="Performance Paid Ads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-5">
+                <h3 class="text-sm font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors" data-i18n="s2.title">إدارة الحملات الممولة</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4" data-i18n="s2.desc">تخطيط واستهداف دقيق وتحسين معدلات التحويل (CRO) لضمان تحقيق أعلى عائد على الإنفاق الإعلاني (ROAS).</p>
+              </div>
+            </div>
+            <div class="px-4 pb-4 sm:px-5 sm:pb-5">
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60 text-[10px] text-emerald-400/90 font-medium">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">Meta & TikTok</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">استهداف المشترين</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">أعلى ROAS</span>
+              </div>
+            </div>
           </div>
 
-          <div class="bg-[#070b14]/75 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-colors">
-            <span class="text-2xl mb-2 block">💻</span>
-            <strong class="text-xs text-white block mb-1" data-i18n="s3.title">الربط التقني وتتبع البيكسل</strong>
-            <span class="text-[11px] text-slate-400 block" data-i18n="s3.desc">إعداد Meta Pixel و CAPI وربط متجرك لضمان قياس كل عملية بيع بدقة.</span>
+          <!-- Service 3: Tracking & Pixel -->
+          <div class="bg-[#0c1220]/90 backdrop-blur-md rounded-2xl border border-slate-800 overflow-hidden hover:border-emerald-500/50 hover:-translate-y-1.5 transition-all duration-300 shadow-xl group flex flex-col justify-between">
+            <div>
+              <div class="relative w-full aspect-[16/10] overflow-hidden bg-slate-950">
+                <img src="./assets/services/service_3.jpg" alt="Technical Tracking & Pixel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-5">
+                <h3 class="text-sm font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors" data-i18n="s3.title">الربط التقني وتتبع البيكسل</h3>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4" data-i18n="s3.desc">إعداد وتتبع Meta Pixel و CAPI مع ربط دقيق بمتجرك لضمان قياس كل عملية بيع بدقة وبناء جماهير إعادة الاستهداف.</p>
+              </div>
+            </div>
+            <div class="px-4 pb-4 sm:px-5 sm:pb-5">
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/60 text-[10px] text-emerald-400/90 font-medium">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">Meta Pixel</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">CAPI Server</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">قياس المبيعات</span>
+              </div>
+            </div>
           </div>
+
         </div>
 
       </div>
